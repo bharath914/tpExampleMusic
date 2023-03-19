@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9E8ED"
+    tools:context=".NosongsActivity">
+
+
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="370dp"
+            android:layout_height="392dp"
+            android:layout_marginTop="92dp"
+            android:background="@drawable/nomusicfound"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:fontFamily="@font/roboto"
+            android:shadowColor="#292828"
+            android:shadowDx="1"
+            android:shadowRadius="2"
+
+            android:text="OOPS \n NO MUSIC FOUND"
+            android:textAlignment="center"
+            android:textColor="#46D1F0"
+            android:textSize="@dimen/xl"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

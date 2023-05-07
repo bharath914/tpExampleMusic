@@ -4,39 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:id="@+id/mainactivity"
-
-    tools:context=".MainActivity">
-    <com.google.android.material.appbar.AppBarLayout
-        android:visibility="gone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    tools:context=".AlbumView">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_albumview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/sm"
-        android:layout_marginRight="@dimen/xl"
-        android:layout_marginLeft="200dp"
-        android:background="@drawable/cornerstwentydp"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-<androidx.appcompat.widget.SearchView
-    android:id="@+id/SearchViewSongs"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/sm"
-    app:queryHint="Search Songs Here......."
-    android:background="@drawable/searchview"
-
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-app:iconifiedByDefault="false"
-    >
-
-</androidx.appcompat.widget.SearchView>
-    </com.google.android.material.appbar.AppBarLayout>
+    </androidx.recyclerview.widget.RecyclerView>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,9 +24,8 @@ app:iconifiedByDefault="false"
         >
         <com.google.android.material.bottomappbar.BottomAppBar
             android:layout_width="match_parent"
-            android:visibility="gone"
             android:layout_height="?attr/actionBarSize"
-app:fabCradleMargin="20dp"
+            app:fabCradleMargin="20dp"
             app:fabCradleRoundedCornerRadius="20dp"
             app:fabCradleVerticalOffset="10dp"
             android:layout_gravity="bottom">
@@ -64,30 +40,9 @@ app:fabCradleMargin="20dp"
         </com.google.android.material.bottomappbar.BottomAppBar>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginEnd="@dimen/sm"
-        android:fadeScrollbars="true"
-        android:nestedScrollingEnabled="false"
-        android:padding="@dimen/x_sm"
-        android:scrollbarFadeDuration="2"
-        android:scrollbarSize="@dimen/m"
-        android:scrollbarStyle="insideOverlay"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@id/audioplaying"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-
-        app:layout_constraintVertical_bias="0.0" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/audioplaying"
-app:layout_constraintBottom_toTopOf="@id/coordinator"
+        app:layout_constraintBottom_toTopOf="@id/coordinator"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintStart_toStartOf="parent"
@@ -169,14 +124,22 @@ app:layout_constraintBottom_toTopOf="@id/coordinator"
             app:drawableStartCompat="@drawable/baseline_skip_next_24">
 
         </TextView>
+        <TextView
+            android:id="@+id/searchViewNavigator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/homeskipnextbutton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:drawableEnd="@drawable/baseline_search_24"
+            android:background="@drawable/searchview"
+            app:layout_constraintWidth_percent="0.1"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
 
+        </TextView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <include layout="@layout/playingview"
-        >
-
-
-    </include>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

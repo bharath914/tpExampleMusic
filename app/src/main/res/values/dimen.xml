@@ -9,7 +9,8 @@
     <dimen name="xxl">64dp</dimen>
     <dimen name="xxxl">128dp</dimen>
     <dimen name="textm">16sp</dimen>
-    <dimen name="textxm">24sp</dimen>
+    <dimen name="textsm">12sp</dimen>
+    <dimen name="textxm">22sp</dimen>
     <dimen name="textl">32sp</dimen>
     <dimen name="textxl">64sp</dimen>
 </resources>

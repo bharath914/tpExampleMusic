@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,125 +9,84 @@
     android:id="@+id/playingview"
 android:clickable="true"
     android:focusable="true"
+android:visibility="visible"
     android:elevation="100dp"
 
 
     >
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:layout_marginTop="@dimen/sm"
 
-    >
-    <TextView
-        android:id="@+id/playingviewbackbutton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:drawableStartCompat="@drawable/backbutton"
-        android:layout_marginStart="@dimen/m"
-        >
-
-    </TextView>
-    <TextView
-        android:id="@+id/constraintforcurrentsong"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Current Playing - "
-        android:singleLine="true"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/playingviewbackbutton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="@dimen/l"
-        >
-
-    </TextView>
-    <TextView
-        android:id="@+id/currentplayingsongplayingview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        app:layout_constraintStart_toEndOf="@+id/constraintforcurrentsong"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="Starboy"
-        android:textColor="@color/white"
-        android:layout_marginStart="@dimen/sm"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-
-        >
-
-    </TextView>
-</androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/imageviewinplayingview"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_margin="@dimen/sm"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287"
-        android:src="@drawable/starboy"
+        android:layout_marginTop="@dimen/xl"
+        android:foregroundGravity="center"
+        android:padding="@dimen/l"
         android:scaleType="centerCrop"
-        >
+        android:src="@drawable/starboysvg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
+
     <TextView
         android:id="@+id/currenplayingsongunderimageview"
         android:layout_width="0dp"
+
+
         android:layout_height="wrap_content"
-        android:text="CurrentPlaying"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/imageviewinplayingview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="@dimen/textl"
-        android:textStyle="bold"
-        android:fontFamily="@font/roboto"
-        android:paddingStart="@dimen/sm"
-        android:paddingEnd="@dimen/sm"
+        android:layout_marginStart="@dimen/xl"
+        android:layout_marginTop="@dimen/xl"
+        android:layout_marginEnd="@dimen/xl"
         android:ellipsize="marquee"
+        android:fontFamily="@font/roboto"
         android:marqueeRepeatLimit="marquee_forever"
         android:maxLines="1"
+        android:paddingStart="@dimen/l"
+        android:paddingEnd="@dimen/sm"
         android:scrollHorizontally="true"
+        android:text="@string/currentplaying"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textl"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekbarplayingview"
 
 
         >
 
     </TextView>
+
     <SeekBar
         android:id="@+id/seekbarplayingview"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currenplayingsongunderimageview"
         style="@style/customSeekbar"
-        android:padding="@dimen/sm"
-        android:thumb="@drawable/seekbarcircle"
+        android:layout_width="match_parent"
+
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/l"
+
+        app:layout_constraintTop_toBottomOf="@id/imageviewinplayingview"
         android:progressTint="@color/white"
-        android:layout_margin="@dimen/x_sm"
+        android:thumb="@drawable/seekbarcircle"
 
 
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="496dp">
 
     </SeekBar>
+
     <TextView
         android:id="@+id/progresstime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="0:00"
         android:textColor="#E2F8E0"
-        android:layout_marginStart="@dimen/m"
+        android:layout_marginStart="@dimen/xl"
         app:layout_constraintTop_toBottomOf="@id/seekbarplayingview"
         app:layout_constraintStart_toStartOf="parent"
         >
@@ -139,66 +99,165 @@ android:clickable="true"
         android:layout_height="wrap_content"
         android:text="0:00"
         android:textColor="#E2F8E0"
-        android:layout_marginEnd="@dimen/m"
+        android:layout_marginEnd="@dimen/xl"
         app:layout_constraintTop_toBottomOf="@id/seekbarplayingview"
         app:layout_constraintEnd_toEndOf="parent">
 
     </TextView>
+
     <TextView
         android:id="@+id/repeattoggleswitch"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:padding="@dimen/sm"
-        android:layout_marginTop="@dimen/sm"
+        android:layout_marginStart="@dimen/sm"
         android:paddingStart="@dimen/m"
+        android:layout_marginTop="@dimen/xxl"
+        app:layout_constraintTop_toBottomOf="@id/currenplayingsongunderimageview"
         app:drawableStartCompat="@drawable/baseline_repeat_24"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/songnavigationprevious"
-        app:layout_constraintTop_toBottomOf="@+id/seekbarplayingview">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="668dp">
 
     </TextView>
+
     <TextView
         android:id="@+id/songnavigationprevious"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/repeattoggleswitch"
-        app:layout_constraintTop_toBottomOf="@id/seekbarplayingview"
-
         app:drawableStartCompat="@drawable/skippreviouslarge"
-        android:layout_marginTop="@dimen/sm">
+        app:layout_constraintTop_toBottomOf="@id/currenplayingsongunderimageview"
+        app:layout_constraintStart_toEndOf="@+id/repeattoggleswitch"
+        tools:layout_editor_absoluteY="668dp"
+        android:layout_marginTop="@dimen/xxl">
 
     </TextView>
+
     <TextView
         android:id="@+id/songnavigationplay"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/songnavigationprevious"
-        app:layout_constraintTop_toBottomOf="@id/seekbarplayingview"
         android:layout_marginStart="@dimen/sm"
-        app:drawableStartCompat="@drawable/baseline_play_circle_outline_24" />
-<TextView
-    android:id="@+id/songnavigationnext"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toEndOf="@id/songnavigationplay"
-    app:layout_constraintTop_toBottomOf="@id/seekbarplayingview"
-    android:layout_marginStart="@dimen/sm"
-    app:drawableStartCompat="@drawable/skipnextlarge"
-    android:layout_marginTop="@dimen/sm">
+        app:layout_constraintTop_toBottomOf="@id/currenplayingsongunderimageview"
+        app:drawableStartCompat="@drawable/baseline_play_circle_outline_24"
+        app:layout_constraintStart_toEndOf="@id/songnavigationprevious"
+        tools:layout_editor_absoluteY="660dp"
+        android:layout_marginTop="60dp"/>
 
-</TextView>
+    <TextView
+        android:id="@+id/songnavigationnext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sm"
+        app:layout_constraintTop_toBottomOf="@id/currenplayingsongunderimageview"
+        app:drawableStartCompat="@drawable/skipnextlarge"
+        app:layout_constraintStart_toEndOf="@id/songnavigationplay"
+        tools:layout_editor_absoluteY="668dp"
+        android:layout_marginTop="@dimen/xxl">
+
+    </TextView>
+
     <TextView
         android:id="@+id/shuffleswitch"
         android:layout_width="0dp"
         android:layout_height="64dp"
-        app:layout_constraintStart_toEndOf="@+id/songnavigationnext"
-        app:layout_constraintTop_toBottomOf="@id/seekbarplayingview"
-        app:drawableStartCompat="@drawable/noshuffle"
         android:padding="@dimen/sm"
         android:paddingStart="@dimen/m"
-        android:layout_marginTop="@dimen/sm"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_marginTop="@dimen/xxl"
+        app:drawableStartCompat="@drawable/noshuffle"
+        app:layout_constraintTop_toBottomOf="@id/currenplayingsongunderimageview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/songnavigationnext"
+        tools:layout_editor_absoluteY="668dp">
 
     </TextView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+
+android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/songnavigationplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/playingviewfiletype"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/mp3"
+                android:layout_margin="@dimen/x_sm"
+                android:textColor="@color/textSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/dotforconstraint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_margin="@dimen/x_sm"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:drawableStartCompat="@drawable/dotshape"
+                app:layout_constraintStart_toEndOf="@id/playingviewfiletype" />
+
+            <TextView
+                android:id="@+id/bitrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bitr"
+                android:layout_margin="@dimen/x_sm"
+                android:textColor="@color/textSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/dotforconstraint"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/dot2forconstraint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x_sm"
+                app:drawableStartCompat="@drawable/dotshape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/bitrate"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/samplingrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/samplingratedemo"
+                android:textColor="@color/textSecondary"
+                android:layout_margin="@dimen/x_sm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/dot2forconstraint"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
 

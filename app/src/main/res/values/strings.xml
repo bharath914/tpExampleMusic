@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PlayMusic</string>
+    <string name="demo">The Demo Text</string>
+    <string name="_3_50">3:50</string>
+    <string name="mp3">MP3</string>
+    <string name="bitr">bitr</string>
+    <string name="samplingratedemo">44.1KHZ</string>
+    <string name="tracks">Tracks</string>
+    <string name="search">Search</string>
+    <string name="albums">Albums</string>
+    <string name="playlists">Playlists</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="currentplaying">CurrentPlaying</string>
 </resources>

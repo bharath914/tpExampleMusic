@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+<item android:id="@+id/tracks"
+    android:title="@string/tracks"
+    android:icon="@drawable/baseline_music_note_24"
+    >
+
+</item>
+    <item android:title="@string/search"
+        android:id="@+id/searchviewitem"
+        android:icon="@drawable/baseline_search_24"
+        >
+
+    </item>
+    <item android:id="@+id/playlistitem"
+        android:title="@string/playlists"
+        android:icon="@drawable/playlist_svgrepo_com">
+
+    </item>
+    <item android:id="@+id/albumitem"
+        android:title="@string/albums"
+        android:icon="@drawable/album_svgrepo_com">
+
+    </item>
+</menu>
